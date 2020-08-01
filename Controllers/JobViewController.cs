@@ -1,15 +1,15 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JobTrackingApp.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JobTrackingApp;
 using JobTrackingApp.Data;
 
-namespace JobTrackingApp.Controllers_
+namespace JobTrackingApp.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class JobViewController : Controller
     {
         private readonly JobsContext _context;
@@ -20,12 +20,14 @@ namespace JobTrackingApp.Controllers_
         }
 
         // GET: JobView
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _context.JobsModel.ToListAsync());
         }
 
         // GET: JobView/Details/5
+        [HttpGet]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

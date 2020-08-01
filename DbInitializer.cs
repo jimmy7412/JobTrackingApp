@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Linq;
+using JobTrackingApp.Data;
 
 namespace JobTrackingApp
 {
     public static class DbInitializer
     {
-        public static void Initialize(JobsApplied jobsApplied)
+        public static void Initialize(JobsContext jobsApplied)
         {
             jobsApplied.Database.EnsureCreated();
 
@@ -14,16 +15,13 @@ namespace JobTrackingApp
                 return;
             }
 
-            var jobs = new JobsModel[]
+            var jobs = new JobsModel
             {
-                new JobsModel
-                {
-                    ID = 1, company = "Amazon", title = "Software Engineer", job_number = "000001",
-                    last_checked = DateTime.Parse("2020-05-01"), last_updated = DateTime.Parse("2020-04-01"),
-                    date_applied = DateTime.Parse("2020-03-01"), status = "Active", notes = "Still Active",
-                    interview = true, rejected = false, city = "Seattle", state = "Washington",
-                    country = "United States"
-                }
+                ID = 1, company = "Amazon", title = "Software Engineer", job_number = "000001",
+                last_checked = DateTime.Parse("2020-05-01"), last_updated = DateTime.Parse("2020-04-01"),
+                date_applied = DateTime.Parse("2020-03-01"), status = "Active", notes = "Still Active",
+                interview = true, rejected = false, city = "Seattle", state = "Washington",
+                country = "United States"
             };
 
             jobsApplied.JobsModel.AddRange(jobs);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
+using JobTrackingApp.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -30,7 +31,7 @@ namespace JobTrackingApp
 
                 try
                 {
-                    var context = services.GetRequiredService<JobsApplied>();
+                    var context = services.GetRequiredService<JobsContext>();
                     // context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }

@@ -1,0 +1,2 @@
+﻿GET https://localhost:5001/jobview/
+Accept: application/json

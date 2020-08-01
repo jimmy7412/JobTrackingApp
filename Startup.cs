@@ -27,11 +27,9 @@ namespace JobTrackingApp
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
             
-            services.AddDbContext<JobsApplied>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("JobsApplied")));
-
             services.AddDbContext<JobsContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("JobsContext")));
+                options.UseSqlite(Configuration.GetConnectionString("JobsApplied")));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
