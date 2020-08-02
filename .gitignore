@@ -8,5 +8,8 @@ riderModule.iml
 *.db
 data/
 
-jobs.db-shm
+*.db-shm
+*.db-wal
+
 jobs.db-wal
+jobs.db-shm
