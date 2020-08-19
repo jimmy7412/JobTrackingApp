@@ -1,2 +1,7 @@
-﻿GET https://localhost:5001/jobview/
+﻿GET https://localhost:5001/weatherforecast/
 Accept: application/json
+
+###
+GET https://localhost:5001/jobview/
+Accept: text/plain
+

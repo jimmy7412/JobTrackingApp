@@ -54,6 +54,9 @@ namespace JobTrackingApp
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(name: "jobview",
+                    pattern: "jobview",
+                    defaults: new { controller = "jobview", action = "Index" });
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
