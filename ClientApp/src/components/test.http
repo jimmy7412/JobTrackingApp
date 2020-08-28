@@ -2,6 +2,6 @@
 Accept: application/json
 
 ###
-GET https://localhost:5001/jobview/
-Accept: text/plain
+GET https://localhost:5001/jobview/Index/
+Accept: text/html
 
