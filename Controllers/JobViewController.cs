@@ -21,14 +21,14 @@ namespace JobTrackingApp.Controllers
         }
 
         // GET: JobView
-        [HttpGet]
+        [HttpGet("jobview")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.JobsModel.ToListAsync());
         }
 
         // GET: JobView/Details/5
-        [HttpGet]
+        [HttpGet("jobview/Details/{id?}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
